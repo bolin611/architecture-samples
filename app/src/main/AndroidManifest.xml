@@ -26,13 +26,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.android.architecture.blueprints.todoapp.tasks.TasksActivity"
+            android:name=".study.serialiable.SendSerialiableAct"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme.OverlapSystemBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".tasks.TestJsonAct">
+        </activity>
+        <activity
+            android:name=".study.serialiable.AcceptSerialiableAct">
+        </activity>
+        <activity
+            android:name=".tasks.TasksActivity">
         </activity>
     </application>
 

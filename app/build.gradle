@@ -2,6 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "com.example.plugin"
+
+jiagu{
+    username "18928380420"
+    password "Tzzb180521"
+    inputAPKpath "H:\\file for work\\360加固宝\\360加固宝\\jiagu_before\\tzzb.apk"
+    outputPath "H:\\file for work\\360加固宝\\360加固宝\\jiagu_after"
+    jarToolPath "H:\\file for work\\360加固宝\\360加固宝\\jiagu\\jiagu.jar"
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -14,7 +23,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
     }
+
 
     android {
         sourceSets {
@@ -96,6 +107,17 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+buildscript {
+    repositories  {
+        maven {url 'https://developer.huawei.com/repo/'}
+    }
+}
 /*
  Dependency versions are defined in the top level build.gradle file. This helps keeping track of
  all versions in a single place. This improves readability and helps managing project complexity.
@@ -164,7 +186,7 @@ dependencies {
     androidTestImplementation "org.robolectric:annotations:$robolectricVersion"
     implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
 
-    // Resolve conflicts between main and test APK:
+    // Resolve conflicts between main and test APK:defaultConfig
     androidTestImplementation "androidx.annotation:annotation:$androidXAnnotations"
     androidTestImplementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
     androidTestImplementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
@@ -174,4 +196,10 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    implementation "com.google.code.gson:gson:2.8.6"
+//    implementation 'com.huawei.hms:push:5.3.0.304'
+    implementation 'com.alibaba:arouter-api:1.5.1'
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
 }

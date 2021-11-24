@@ -1,0 +1,54 @@
+apply plugin: 'java-library'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/public/"
+        }
+        maven {
+            //https://repo1.maven.org/maven2/
+            url "https://maven.aliyun.com/repository/central"
+        }
+        maven {
+            //https://maven.google.com/
+            url "https://maven.aliyun.com/repository/google"
+        }
+        maven {
+            //https://plugins.gradle.org/m2/
+            url "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+
+        maven {
+            //http://jcenter.bintray.com/
+            url "https://maven.aliyun.com/repository/jcenter"
+        }
+    }
+}
+
+dependencies{
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:3.6.3'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        JiaguPlugin(MavenPublication){
+            from components.java
+            groupId 'com.example'
+            artifactId 'jiagu'
+            version '1.0'
+        }
+    }
+}
