@@ -8,8 +8,35 @@ public class JiaguExt {
     private String keystore_password;
     private String alias;
     private String alias_password;
-    private String inputAPKpath;
+    private String inputPath;
     private String outputPath;
+    private String sdkHome;
+    private String zipAlignApkPath;
+    private String zipAlignSignedApkPath;
+
+    public String getZipAlignApkPath() {
+        return zipAlignApkPath;
+    }
+
+    public void setZipAlignApkPath(String zipAlignApkPath) {
+        this.zipAlignApkPath = zipAlignApkPath;
+    }
+
+    public String getZipAlignSignedApkPath() {
+        return zipAlignSignedApkPath;
+    }
+
+    public void setZipAlignSignedApkPath(String zipAlignSignedApkPath) {
+        this.zipAlignSignedApkPath = zipAlignSignedApkPath;
+    }
+
+    public String getSdkHome() {
+        return sdkHome;
+    }
+
+    public void setSdkHome(String sdkHome) {
+        this.sdkHome = sdkHome;
+    }
 
     public String getJarToolPath() {
         return jarToolPath;
@@ -67,12 +94,12 @@ public class JiaguExt {
         this.alias_password = alias_password;
     }
 
-    public String getInputAPKpath() {
-        return inputAPKpath;
+    public String getInputPath() {
+        return inputPath;
     }
 
-    public void setInputAPKpath(String inputAPKpath) {
-        this.inputAPKpath = inputAPKpath;
+    public void setInputPath(String inputPath) {
+        this.inputPath = inputPath;
     }
 
     public String getOutputPath() {
